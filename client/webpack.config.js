@@ -20,7 +20,7 @@ module.exports = () => {
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'TODOs List'
+        title: 'Text Editor'
       }),
 
       new InjectManifest({
@@ -30,8 +30,19 @@ module.exports = () => {
 
 
       new WebpackPwaManifest({
-        // TODO: Create a manifest.json:
-      }),
+        //example from webpack-pwa-manifest NPM Documentation --- placeholder
+        name: 'Progressive Web Application: Text Editor',
+        short_name: 'PWA Txt Edit',
+        description: 'A PWA text editor that runs in the browser',
+        background_color: '#ffffff',
+        crossorigin: '', //can be null, use-credentials or anonymous
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            size: '500x500'
+          },
+        ]
+          }),
       
     ],
 
