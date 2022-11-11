@@ -17,11 +17,11 @@ const initdb = async () =>
 // Placeholder variables, need to update for this app
 
 export const putDb = async (content) => {
-  console.log('Post to the ase');
-  const todosDb = await openDB('todos', 1);
-  const tx = todosDb.transaction('todos', 'readwrite');
-  const store = tx.objectStore('todos');
-  const request = store.add({ todo: content });
+  console.log('Posted to the indexDB');
+  const todosDb = await openDB('jate', 1);
+  const tx = todosDb.transaction('jate', 'readwrite');
+  const store = tx.objectStore('jate');
+  const request = store.add({ jate: content });
   const result = await request;
   console.log('🚀 - data saved to the database', result);
 };
@@ -32,9 +32,9 @@ export const putDb = async (content) => {
 
 export const getDb = async () => {
   console.log('GET all from the database');
-  const todosDb = await openDB('todos', 1);
-  const tx = todosDb.transaction('todos', 'readonly');
-  const store = tx.objectStore('todos');
+  const todosDb = await openDB('jate', 1);
+  const tx = todosDb.transaction('jate', 'readonly');
+  const store = tx.objectStore('jate');
   const request = store.getAll();
   const result = await request;
   console.log('result.value', result);
