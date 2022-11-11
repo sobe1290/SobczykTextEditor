@@ -36,10 +36,12 @@ module.exports = () => {
         description: 'A PWA text editor that runs in the browser',
         background_color: '#ffffff',
         crossorigin: '', //can be null, use-credentials or anonymous
+        start_url: './',
+        publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
-            size: '500x500'
+            sizes: [96, 128, 192, 256, 384, 512],
           },
         ]
           }),
