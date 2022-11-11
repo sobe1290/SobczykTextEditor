@@ -6,16 +6,14 @@ let deferredPrompt;
 // TODO: Add an event handler to the `beforeinstallprompt` event
 window.addEventListener('beforeinstallprompt', (event) => {
     event.preventDefault();
-    deferredPrompt = event;
+    window.deferredPrompt = event;
 });
 
 // TODO: Implement a click event handler on the `butInstall` element
 butInstall.addEventListener('click', async () => {
-    deferredPrompt.prompt();
+    window.deferredPrompt.prompt();
   // Find out whether the user confirmed the installation or not
   const { outcome } = await deferredPrompt.userChoice;
-  // The deferredPrompt can only be used once.
-  deferredPrompt = null;
   // Act on the user's choice
   if (outcome === 'accepted') {
     console.log('User accepted the install prompt.');
