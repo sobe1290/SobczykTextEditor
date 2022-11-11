@@ -31,17 +31,22 @@ module.exports = () => {
 
       new WebpackPwaManifest({
         //example from webpack-pwa-manifest NPM Documentation --- placeholder
-        name: 'Progressive Web Application: Text Editor',
-        short_name: 'PWA Txt Edit',
-        description: 'A PWA text editor that runs in the browser',
-        background_color: '#ffffff',
-        crossorigin: '', //can be null, use-credentials or anonymous
-        start_url: './',
-        publicPath: './',
+        fingerprints: false,
+        inject: true,
+        name: 'Just Another Text Editor',
+        short_name: 'J.A.T.E',
+        description: 'Takes notes with Javascript syntax highlighting!',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
+        start_url: '/',
+        publicPath: '/',
+        orientation: 'portrait',
+        display: 'standalone',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
           },
         ]
           }),
